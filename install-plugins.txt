@@ -20,3 +20,4 @@ timestamper:latest
 workflow-aggregator:latest
 ws-cleanup:latest
 terraform:latest
+job-dsl:latest
