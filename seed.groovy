@@ -12,16 +12,16 @@ job('create_terraform_jobs') {
       type 'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey'
       required(true)
     }
-    stringParam 'tf_version', '0.7.0', 'Terraform version to install and use'
+    stringParam 'tf_version', '1.11.4', 'Terraform version to install and use'
     stringParam 'tf_arch', 'linux_amd64', 'Terraform arch to install and use'
-    stringParam 'tf_sha256', 'a196c63b967967343f3ae9bb18ce324a18b27690e2d105e1f38c5a2d7c02038d', 'Terraform .zip sha256 sum'
+    stringParam 'tf_sha256', '1ce994251c00281d6845f0f268637ba50c0005657eb3cf096b92f753b42ef4dc', 'Terraform .zip sha256 sum'
     booleanParam 'create_destroy_job', false, 'Create a DESTROY job for this environment'
     booleanParam 'slack_notifications', false, 'Send notifications to a slack channel'
     stringParam 'slack_channel', '', 'Slack channel to send notifications to'
     textParam 'env_vars', '', 'Multi-line text input containing NAME=VALUE pairs. While not recommend, this is one way to pass auth data eg: `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`'
   }
   scm {
-    github 'benwtr/tf_pipeline'
+    github 'msabry2020/jcasc'
   }
   steps {
     dsl {
