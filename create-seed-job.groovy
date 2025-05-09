@@ -12,16 +12,16 @@ def configXml = '''\
     <actions/>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <scm class="hudson.plugins.git.GitSCM" plugin="git@5.7.0">
+    <scm class="hudson.plugins.git.GitSCM">
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/msabry2020/jcasc.git</url>
+          <url>https://github.com/benwtr/tf_pipeline.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
         <hudson.plugins.git.BranchSpec>
-          <name>*/main</name>
+          <name>*/master</name>
         </hudson.plugins.git.BranchSpec>
       </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -35,7 +35,7 @@ def configXml = '''\
     <triggers/>
     <concurrentBuild>false</concurrentBuild>
     <builders>
-      <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.92">
+      <javaposse.jobdsl.plugin.ExecuteDslScripts>
         <targets>seed.groovy</targets>
         <usingScriptText>false</usingScriptText>
         <ignoreExisting>false</ignoreExisting>
