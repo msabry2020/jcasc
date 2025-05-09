@@ -18,11 +18,11 @@ security:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
-  scriptApproval:
-    approvedSignatures:
-      - "method java.lang.String trim"
-      - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.File java.lang.String"
+#  scriptApproval:
+#    approvedSignatures:
+#      - "method java.lang.String trim"
+#      - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.File java.lang.String"
 
-unclassified:
-  location:
-    url: http://34.58.212.217:8080/
+#unclassified:
+#  location:
+#    url: http://34.58.212.217:8080/
