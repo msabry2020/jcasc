@@ -12,6 +12,11 @@ jenkins:
         - "Overall/Read:authenticated"
   remotingSecurity:
     enabled: true
+  scm:
+    git:
+      extensions:
+        - gitHostKeyVerification:  # Explicitly enable host key verification
+            strategy: "acceptFirstConnection"  # Key option!
 
 security:
   queueItemAuthenticator:
