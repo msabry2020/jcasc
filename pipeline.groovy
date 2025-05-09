@@ -121,7 +121,7 @@ def git_checkout() {
   } else {
     checkout([
       $class: 'GitSCM',
-      branches: [[name: "*/master"]],
+      branches: [[name: "*/main"]],
       doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
       userRemoteConfigs: [[
         credentialsId: gh_credentials_id,
@@ -131,6 +131,7 @@ def git_checkout() {
   }
 }
 
+/*
 def initialize_remote_state() {
   stage 'initialize remote state'
   withEnv(["s3_bucket=$s3_bucket","s3_key=$s3_key"]) {
@@ -144,6 +145,7 @@ def initialize_remote_state() {
     '''.stripIndent()
   }
 }
+*/
 
 def tf_plan(extra_flags='') {
   if (pull_request) {

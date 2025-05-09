@@ -2,9 +2,10 @@
 
 job('create_terraform_jobs') {
   parameters {
-    stringParam 'gh_owner', '', 'User or organization for the github repo, eg: https://github.com/OWNER/repo'
-    stringParam 'gh_repo', '', 'Repo where TF code is stored, eg: https://github.com/owner/REPO'
-    stringParam 'gh_path', '', 'Root of terraform code inside the repo. Dont use slashes here, trailing or otherwise, and it can be only one level deep. Empty string if tf code is in /, use this for dev/staging/prod envs'
+    stringParam 'gh_owner', 'msabry2020', 'User or organization for the github repo, eg: https://github.com/OWNER/repo'
+    stringParam 'gh_repo', 'jcasc', 'Repo where TF code is stored, eg: https://github.com/owner/REPO'
+    stringParam 'gh_path', 'dev', 'Root of terraform code inside the repo. Dont use slashes here, trailing or otherwise, and it can be only one level deep. Empty string if tf code is in /, use this for dev/staging/prod envs'
+/*
     stringParam 's3_bucket', '', 'Name of S3 bucket for terraform state files'
     stringParam 's3_key', '', 'Key/path to store this enviroment\'s state file in s3; the "name" of the environment'
     credentialsParam('gh_credentials_id') {
@@ -12,6 +13,7 @@ job('create_terraform_jobs') {
       type 'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey'
       required(true)
     }
+*/
     stringParam 'tf_version', '1.11.4', 'Terraform version to install and use'
     stringParam 'tf_arch', 'linux_amd64', 'Terraform arch to install and use'
     stringParam 'tf_sha256', '1ce994251c00281d6845f0f268637ba50c0005657eb3cf096b92f753b42ef4dc', 'Terraform .zip sha256 sum'
