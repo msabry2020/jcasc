@@ -8,12 +8,13 @@ job('create_terraform_jobs') {
 /*
     stringParam 's3_bucket', '', 'Name of S3 bucket for terraform state files'
     stringParam 's3_key', '', 'Key/path to store this enviroment\'s state file in s3; the "name" of the environment'
+*/
     credentialsParam('gh_credentials_id') {
       description 'SSH private key for github. (Use \'git\' as the username)'
       type 'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey'
+      defaultValue 'github-ssh-key'
       required(true)
     }
-*/
     stringParam 'tf_version', '1.11.4', 'Terraform version to install and use'
     stringParam 'tf_arch', 'linux_amd64', 'Terraform arch to install and use'
     stringParam 'tf_sha256', '1ce994251c00281d6845f0f268637ba50c0005657eb3cf096b92f753b42ef4dc', 'Terraform .zip sha256 sum'
@@ -106,7 +107,7 @@ job('create_terraform_jobs') {
             }
             definition {
               cps {
-                // sandbox() // uncomment then whitelist methods under _In-process Script Approval_ if using the groovy sandbox
+                sandbox() // uncomment then whitelist methods under _In-process Script Approval_ if using the groovy sandbox
                 script readFileFromWorkspace('pipeline.groovy') + workflow
               }
             }

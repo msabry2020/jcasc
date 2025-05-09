@@ -18,6 +18,21 @@ security:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
+
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - basicSSHUserPrivateKey:
+              scope: GLOBAL
+              id: "github-ssh-key"  # Unique ID for the credential
+              username: "git"       # GitHub requires username 'git' for SSH
+              description: "Private SSH key for GitHub access"
+              privateKeySource:
+                directEntry:
+                  privateKey: ${GITHUB_SSH_KEY}
+
 #  scriptApproval:
 #    approvedSignatures:
 #      - "method java.lang.String trim"
