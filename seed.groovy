@@ -5,10 +5,8 @@ job('create_terraform_jobs') {
     stringParam 'gh_owner', 'msabry2020', 'User or organization for the github repo, eg: https://github.com/OWNER/repo'
     stringParam 'gh_repo', 'jcasc', 'Repo where TF code is stored, eg: https://github.com/owner/REPO'
     stringParam 'gh_path', 'dev', 'Root of terraform code inside the repo. Dont use slashes here, trailing or otherwise, and it can be only one level deep. Empty string if tf code is in /, use this for dev/staging/prod envs'
-/*
     stringParam 's3_bucket', '', 'Name of S3 bucket for terraform state files'
     stringParam 's3_key', '', 'Key/path to store this enviroment\'s state file in s3; the "name" of the environment'
-*/
     credentialsParam('gh_credentials_id') {
       description 'SSH private key for github. (Use \'git\' as the username)'
       type 'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey'
