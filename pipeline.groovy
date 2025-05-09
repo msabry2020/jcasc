@@ -65,7 +65,7 @@ def setup_tf() {
 
       if [ ! -f "${tf_zipfile}" ]
       then
-        wget -q "${tf_url}"
+        curl -O "${tf_url}"
       fi
 
       if [ "$(sha256sum ${tf_zipfile} | awk '{print $1}')" = "${tf_sha256}" ]
