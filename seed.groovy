@@ -115,7 +115,7 @@ job('create_terraform_jobs') {
         def tf_plan_job = tf_job 'PLAN', """
           withEnv(_env_vars) {
             node {
-              pull_request=true
+              pull_request=false
               git_checkout()
               prepare_workspace()
               setup_tf()
