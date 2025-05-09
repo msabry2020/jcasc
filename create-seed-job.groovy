@@ -4,19 +4,19 @@
 
 import jenkins.model.*
 
-def jobName = 'seed'
+def jobName = 'seed3'
 
 def configXml = '''\
-  <?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
   <project>
     <actions/>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <scm class="hudson.plugins.git.GitSCM">
+    <scm class="hudson.plugins.git.GitSCM"">
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/benwtr/tf_pipeline.git</url>
+          <url>https://github.com/msabry2020/jcasc.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
@@ -35,7 +35,7 @@ def configXml = '''\
     <triggers/>
     <concurrentBuild>false</concurrentBuild>
     <builders>
-      <javaposse.jobdsl.plugin.ExecuteDslScripts>
+      <javaposse.jobdsl.plugin.ExecuteDslScripts">
         <targets>seed.groovy</targets>
         <usingScriptText>false</usingScriptText>
         <ignoreExisting>false</ignoreExisting>
@@ -57,7 +57,7 @@ if (!Jenkins.instance.getItem(jobName)) {
     def seedJob = Jenkins.instance.createProjectFromXML(jobName, xmlStream)
     seedJob.scheduleBuild(0, null)
   } catch (ex) {
-    println "ERROR: ${ex}"
+    println "ERROR:-( ${ex}"
     println configXml.stripIndent()
   }
 }
