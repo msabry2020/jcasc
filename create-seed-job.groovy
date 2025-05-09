@@ -4,7 +4,7 @@
 
 import jenkins.model.*
 
-def jobName = 'seed3'
+def jobName = 'seed'
 
 def configXml = '''\
 <?xml version="1.0" encoding="utf-8"?>
@@ -12,7 +12,7 @@ def configXml = '''\
     <actions/>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <scm class="hudson.plugins.git.GitSCM"">
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
@@ -21,7 +21,7 @@ def configXml = '''\
       </userRemoteConfigs>
       <branches>
         <hudson.plugins.git.BranchSpec>
-          <name>*/master</name>
+          <name>*/main</name>
         </hudson.plugins.git.BranchSpec>
       </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -35,7 +35,7 @@ def configXml = '''\
     <triggers/>
     <concurrentBuild>false</concurrentBuild>
     <builders>
-      <javaposse.jobdsl.plugin.ExecuteDslScripts">
+      <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.48">
         <targets>seed.groovy</targets>
         <usingScriptText>false</usingScriptText>
         <ignoreExisting>false</ignoreExisting>
