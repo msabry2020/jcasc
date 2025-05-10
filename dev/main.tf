@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "libvirt" {
-  uri = "qemu+ssh://m_amin:admin@127.0.0.1:22/system?sshauth=ssh-password"
+  uri = "qemu+ssh://eng_muhammedsabry:admin@127.0.0.1:22/system?sshauth=ssh-password"
 }
 
 
