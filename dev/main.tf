@@ -30,10 +30,6 @@ resource "libvirt_domain" "vm" {
     volume_id = element(libvirt_volume.vm_disk.*.id, count.index)
   }
 
-  disk {
-    file = libvirt_volume.esx_iso.source
-  }
-
   network_interface {
     network_name     = "default"
     addresses      = ["192.168.122.1${count.index}"]
