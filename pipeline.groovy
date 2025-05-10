@@ -91,6 +91,7 @@ def fetch_modules() {
 
 def tf_validate() {
   stage 'validate syntax'
+  _sh './bin/terraform init'
   _sh './bin/terraform validate'
 }
 
