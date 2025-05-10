@@ -156,7 +156,7 @@ def tf_plan(extra_flags='') {
   stage 'run plan'
   withEnv(["extra_flags=$extra_flags"]) {
     _sh '''\
-      set -o pipefail
+      
 
       ./bin/terraform plan \
         -refresh=true \
@@ -224,7 +224,7 @@ def tf_apply() {
   stage 'run apply'
 
   _sh '''\
-    set -o pipefail
+    
 
     ./bin/terraform apply \
       -input=false \
