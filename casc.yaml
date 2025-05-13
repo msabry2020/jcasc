@@ -72,48 +72,48 @@ credentials:
                     -----END PRIVATE KEY-----
           
           # OCI Configuration
-#          - usernamePassword:
-#              scope: GLOBAL
-#              id: "oci-prd-cred-config"
-#              username: "tenancy_ocid"
-#              password: "ocid1.tenancy.oc1..aaaaaaaalzzltczij5hvr3r3qnczlnlizouscuurmynvkpuzrwl42podgx7q"
-#              description: "OCI Production Tenancy Config"
-#          
-#          - basicSSHUserPrivateKey:
-#              scope: GLOBAL
-#              id: "oci-prd-cred-key"
-#              description: "OCI Production API Key"
-#              privateKeySource:
-#                directEntry:
-#                  privateKey: |
-#                    -----BEGIN PRIVATE KEY-----
-#                    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCmnb9t74e1HDyY
-#                    kOsQ1PTW4MVfGpnWmkhgNIk+h0n+mLHq44VmhXrqc0Db1kaDDlEZivhyW+feaWfg
-#                    JgVAId6XHDTalq7JQMt1b1cd1EpbNgfvIbDo251cC2P4ZdmvXblwontURf3ceGUA
-#                    xPht8EhWdA7QxVfjRRo9/s26iwuyp1FELkLXHoK3Nf89hn1XQ1+0x2exWLJPCQhg
-#                    q3nFqSQkehGCl9zM5gGKHYsZFye4SnchuJoAtPtfvRXHfDIW2tuASPwR4f+BSeol
-#                    MyHjgAXNyjX3trii/8W/BN8JQx+yy5c5dzS5dc8b2OPwoxeGYMkH5eIbOfo4IjjF
-#                    5+31N2h1AgMBAAECggEAHqFrByqtM/A6OqEPufMwhM1jM5n4FLId4qPd5FMqWQYY
-#                    1VIZHPEmmPHxx0iEA4VvBudbx+hZ/vM5T8WlmvXvDjA3DkV74g9JqC/9H8R+m/iZ
-#                    qk5zD8gKDJkiepC83Ya5N/oC+sn4Qt8WUHclpc5x+gTRkXNqNiOm0KVmjGgSEThx
-#                    n+s7GXqtQeMBFtALnjIoKuKrRYnpC1kVgem8+BNILlrrlwmUsEGQtViJpuFUPDct
-#                    Y5hAfuhtFMe4xiyuySFylbhuOFKwLQAmdAjWpfsPiMCzsa9/57RSUfMrIu+9G1o6
-#                    EYP8hRBDZFoCCmaZvWZMh1/ftr65XJh+UqIKm4aloQKBgQDgSyvr3IyQ2HpgDizl
-#                    dLwD0H84VvZdDJD0HI4bfYCXyfSzmeFzRM1DZJufWvvsQelzCOMSFwe+a13SGaW+
-#                    kT/qJ93ftwHHJ1NnoyYRdkp3im0o6490e9M7ZPLPeBXquNx8RBN7iJVQXOwSnkj6
-#                    mh/STTqC1soBANLMWxLDWhim1QKBgQC+K1JpfesyZ2TRwOflsz8PgS9sKlrMhMPc
-#                    5ORxPoh3aS9ngNwcoNmyGHTApfa/RzMqh1doIhdvciHLBQ5RcbkOnF0RMcdwldUk
-#                    FW+qnaZkcigumFD8Cz/asI90FVdXMbEooxWrImaujRcacAmiMetjr0m1qKTQk/Wg
-#                    VXiGmkPLIQKBgQDSPOQAg4ymwKOEogTnV5JcqPR25Nysv3inuJRjpDIDFWRvbM/s
-#                    chNNFmLg7jGxdN7T2wKtFDVIAe/BXhUEGbYlUBUi+7GI8Y22WTD3sT9/6ZsEfjjL
-#                    YL3QsIEAg3lXuMvDFzSD2LTMzSzjDsctT4aAY69ysM5MPm9Y6g0eW7c7uQKBgBfX
-#                    5LBXWlrqfciS0ECLldeC0ghU0yebaddTV5UfSwr1xDzM+kwYmtLqoBDbfjGDYtXt
-#                    PDdRNvEBNV14F9B8WsCLOFwEisYB80Rf761LsOYdLg6RiG3hlzL7OjFKz7WeBGFc
-#                    +UWIvakbBY+KBpsweRv5iVtedrO0KXLd5Iuz4dYhAoGAOUJjBagyd1vLW5PX5a54
-#                    vwFnmVyYcQYCGiDXpkG4sIBqsJ7jdKJSmhS2tSAljMCkJ4aQFncAtdeYt0J6cWmV
-#                    JIeoDqFiL5d7cECaMEhurcmGcp6aCFpk+WHc5blfTxSpktlsiS/8qYKCPkXlz4HD
-#                    XkynhWtY3JQBcFC6A+uWoDs=
-#                    -----END PRIVATE KEY-----
+          - usernamePassword:
+              scope: GLOBAL
+              id: "oci-prd-cred-config"
+              username: "tenancy_ocid"
+              password: "ocid1.tenancy.oc1..aaaaaaaalzzltczij5hvr3r3qnczlnlizouscuurmynvkpuzrwl42podgx7q"
+              description: "OCI Production Tenancy Config"
+          
+          - basicSSHUserPrivateKey:
+              scope: GLOBAL
+              id: "oci-prd-cred-key"
+              description: "OCI Production API Key"
+              privateKeySource:
+                directEntry:
+                  privateKey: |
+                    -----BEGIN PRIVATE KEY-----
+                    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCmnb9t74e1HDyY
+                    kOsQ1PTW4MVfGpnWmkhgNIk+h0n+mLHq44VmhXrqc0Db1kaDDlEZivhyW+feaWfg
+                    JgVAId6XHDTalq7JQMt1b1cd1EpbNgfvIbDo251cC2P4ZdmvXblwontURf3ceGUA
+                    xPht8EhWdA7QxVfjRRo9/s26iwuyp1FELkLXHoK3Nf89hn1XQ1+0x2exWLJPCQhg
+                    q3nFqSQkehGCl9zM5gGKHYsZFye4SnchuJoAtPtfvRXHfDIW2tuASPwR4f+BSeol
+                    MyHjgAXNyjX3trii/8W/BN8JQx+yy5c5dzS5dc8b2OPwoxeGYMkH5eIbOfo4IjjF
+                    5+31N2h1AgMBAAECggEAHqFrByqtM/A6OqEPufMwhM1jM5n4FLId4qPd5FMqWQYY
+                    1VIZHPEmmPHxx0iEA4VvBudbx+hZ/vM5T8WlmvXvDjA3DkV74g9JqC/9H8R+m/iZ
+                    qk5zD8gKDJkiepC83Ya5N/oC+sn4Qt8WUHclpc5x+gTRkXNqNiOm0KVmjGgSEThx
+                    n+s7GXqtQeMBFtALnjIoKuKrRYnpC1kVgem8+BNILlrrlwmUsEGQtViJpuFUPDct
+                    Y5hAfuhtFMe4xiyuySFylbhuOFKwLQAmdAjWpfsPiMCzsa9/57RSUfMrIu+9G1o6
+                    EYP8hRBDZFoCCmaZvWZMh1/ftr65XJh+UqIKm4aloQKBgQDgSyvr3IyQ2HpgDizl
+                    dLwD0H84VvZdDJD0HI4bfYCXyfSzmeFzRM1DZJufWvvsQelzCOMSFwe+a13SGaW+
+                    kT/qJ93ftwHHJ1NnoyYRdkp3im0o6490e9M7ZPLPeBXquNx8RBN7iJVQXOwSnkj6
+                    mh/STTqC1soBANLMWxLDWhim1QKBgQC+K1JpfesyZ2TRwOflsz8PgS9sKlrMhMPc
+                    5ORxPoh3aS9ngNwcoNmyGHTApfa/RzMqh1doIhdvciHLBQ5RcbkOnF0RMcdwldUk
+                    FW+qnaZkcigumFD8Cz/asI90FVdXMbEooxWrImaujRcacAmiMetjr0m1qKTQk/Wg
+                    VXiGmkPLIQKBgQDSPOQAg4ymwKOEogTnV5JcqPR25Nysv3inuJRjpDIDFWRvbM/s
+                    chNNFmLg7jGxdN7T2wKtFDVIAe/BXhUEGbYlUBUi+7GI8Y22WTD3sT9/6ZsEfjjL
+                    YL3QsIEAg3lXuMvDFzSD2LTMzSzjDsctT4aAY69ysM5MPm9Y6g0eW7c7uQKBgBfX
+                    5LBXWlrqfciS0ECLldeC0ghU0yebaddTV5UfSwr1xDzM+kwYmtLqoBDbfjGDYtXt
+                    PDdRNvEBNV14F9B8WsCLOFwEisYB80Rf761LsOYdLg6RiG3hlzL7OjFKz7WeBGFc
+                    +UWIvakbBY+KBpsweRv5iVtedrO0KXLd5Iuz4dYhAoGAOUJjBagyd1vLW5PX5a54
+                    vwFnmVyYcQYCGiDXpkG4sIBqsJ7jdKJSmhS2tSAljMCkJ4aQFncAtdeYt0J6cWmV
+                    JIeoDqFiL5d7cECaMEhurcmGcp6aCFpk+WHc5blfTxSpktlsiS/8qYKCPkXlz4HD
+                    XkynhWtY3JQBcFC6A+uWoDs=
+                    -----END PRIVATE KEY-----
 
 #  scriptApproval:
 #    approvedSignatures:
