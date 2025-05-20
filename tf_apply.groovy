@@ -41,7 +41,7 @@ node {
         sh '''\
         cd dev
         ./bin/terraform plan \
-            -var="vm_name=test_vm"        
+            -var="vm_name=test_vm" \
             -refresh=true \
             -input=false \
             -out=terraform.plan \
