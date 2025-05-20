@@ -57,7 +57,7 @@ node {
         sh '''\
         cd dev
         ./bin/terraform apply \
-            -var="vm_name=test_vm"
+            -var="vm_name=test_vm" \
             -input=false \
             terraform.plan \
             2>&1 | tee "terraform.apply.ansi"
