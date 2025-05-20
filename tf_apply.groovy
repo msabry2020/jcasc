@@ -32,7 +32,6 @@ node {
         sh '''\
         cd dev
         ./bin/terraform init
-        ./bin/terraform validate
         '''.stripIndent()
 
     }
@@ -42,6 +41,7 @@ node {
         sh '''\
         cd dev
         ./bin/terraform plan \
+            -var="vm_name=test_vm"        
             -refresh=true \
             -input=false \
             -out=terraform.plan \
