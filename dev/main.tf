@@ -6,6 +6,11 @@ terraform {
   }
 }
 
+variable "vm_name" {
+  type = string
+  default = my_vm
+}
+
 provider "libvirt" {
   uri = "qemu+ssh://eng_muhammedsabry:admin@0.0.0.0:22/system?sshauth=ssh-password"
 }
