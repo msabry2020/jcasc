@@ -8,7 +8,7 @@ node {
         sh '''\
             cd dev
             rm -rf .terraform
-            rm -f exitcode.txt terraform.plan terraform.plan.txt terraform.plan.ansi terraform.plan.summary terraform.apply.ansi terraform.apply.txt
+            rm -f exitcode.txt terraform*
         '''.stripIndent()
     }
     
