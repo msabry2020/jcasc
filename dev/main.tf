@@ -17,14 +17,14 @@ provider "libvirt" {
 
 # Create a base volume for the new VMs (10GB)
 resource "libvirt_volume" "vm_disk" {
-  name           = "${var.vm_name}"
+  name           = "${var.tf_vm_name}"
   pool           = "default"
   size           = 10 * 1024 * 1024 * 1024 # 100GB in bytes
   format         = "qcow2"
 }
 
 resource "libvirt_domain" "vm" {
-  name   = "${var.vm_name}"
+  name   = "${var.tf_vm_name}"
   vcpu   = 1
   memory = 2048
 
@@ -35,7 +35,7 @@ resource "libvirt_domain" "vm" {
   network_interface {
     network_name     = "default"
     addresses      = ["192.168.122.10"]
-    hostname       = "${var.vm_name}"
+    hostname       = "${var.tf_vm_name}"
   }
 
   boot_device {
