@@ -38,29 +38,33 @@ node {
     
     
     stage('tf_plan') { // for display purposes
-        sh '''\
-        cd dev
-        ./bin/terraform plan \
-            -var="vm_name=test_vm" \
-            -refresh=true \
-            -input=false \
-            -out=terraform.plan \
-            -detailed-exitcode \
-            2>&1 | tee "terraform.plan.ansi"
+        withEnv(["vm=$VM_NAME"]) {
+            sh '''\
+            cd dev
+            ./bin/terraform plan \
+                -var="tf_vm_name=${vm}" \
+                -refresh=true \
+                -input=false \
+                -out=terraform.plan \
+                -detailed-exitcode \
+                2>&1 | tee "terraform.plan.ansi"
 
-        echo "exit code: $?"
-        echo $? > exitcode.txt
-        '''.stripIndent()
+            echo "exit code: $?"
+            echo $? > exitcode.txt
+            '''.stripIndent()
+        }
     }
 
     stage('tf_apply') { // for display purposes
-        sh '''\
-        cd dev
-        ./bin/terraform apply \
-            -var="vm_name=test_vm" \
-            -input=false \
-            terraform.plan \
-            2>&1 | tee "terraform.apply.ansi"
-        '''.stripIndent()
+        withEnv(["vm=$VM_NAME"]) {    
+            sh '''\
+            cd dev
+            ./bin/terraform apply \
+                -var="tf_vm_name=${vm}" \
+                -input=false \
+                terraform.plan \
+                2>&1 | tee "terraform.apply.ansi"
+            '''.stripIndent()
+        }
     }    
 }
