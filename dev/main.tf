@@ -8,7 +8,7 @@ terraform {
 
 variable "vm_name" {
   type = string
-  default = my_vm
+  default = "my_vm"
 }
 
 provider "libvirt" {
