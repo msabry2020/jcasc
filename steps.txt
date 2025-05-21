@@ -36,3 +36,4 @@
    36  podman run--name jenkins --rm -p 8080:8080 jenkins:jcasc
    37  podman run --name jenkins --rm -p 8080:8080 jenkins:jcasc
    38  history > steps.txt
+podman run --name jenkins --rm --network=host -p 8080:8080 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=admin --env GITHUB_SSH_KEY="$(cat ~/jenkins.key)" jenkins:jcasc

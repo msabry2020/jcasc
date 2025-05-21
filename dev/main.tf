@@ -11,7 +11,7 @@ variable "tf_vm_name" {
 }
 
 provider "libvirt" {
-  uri = "qemu+ssh://eng_muhammedsabry:admin@0.0.0.0:22/system?sshauth=ssh-password"
+  uri = "qemu+ssh://eng_muhammedsabry:admin@34.172.121.81:22/system?sshauth=ssh-password"
 }
 
 
