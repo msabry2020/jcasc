@@ -1,39 +1,4 @@
-    1  sudo -i
-    2  SUBNET="192.168.50"
-    3  REVERSE_SUBNET=$(echo "$SUBNET" | awk -F'.' '{print $3"."$2"."$1}')
-    4  echo $REVERSE_SUBNET 
-    5  ssh admin@192.168.122.100
-    6  ssh admin@192.168.122.106
-    7  sudo systemctl start cockpit
-    8  sudo dnf -y install podman
-    9  podman run hello-world
-   10  mkdir -p $HOME/playground/jcasc
-   11  cd $HOME/playground/jcasc
-   12  vim Containerfile
-   13  podman build -t jenkins:jcasc .
-   14  docker run --name jenkins --rm -p 8080:8080 jenkins:jcasc
-   15  podman run --name jenkins --rm -p 8080:8080 jenkins:jcasc
-   16  vim $HOME/playground/jcasc/plugins.txt
-   17  vim Containerfile 
-   18  podman build -t jenkins:jcasc .
-   19  /usr/local/bin/install-plugins.sh < plugins.txt 
-   20  podman build -t jenkins:jcasc .
-   21  podman run -d --name jenkins --rm -p 8080:8080 jenkins:jcasc
-   22  podman exec -it jenkins /bin/bash
-   23  podman rm -f jenkins
-   24  vim Containerfile 
-   25  mv plugins.txt install-plugins.sh
-   26  chmod +x install-plugins.sh 
-   27  podman build -t jenkins:jcasc .
-   28  vim Containerfile 
-   29  podman build -t jenkins:jcasc .
-   30  podman run -d --name jenkins --rm -p 8080:8080 jenkins:jcasc
-   31  podman exec -it jenkins /bin/bash
-   32  podman rm -f jenkins
-   33  vim Containerfile 
-   34  mv install-plugins.sh install-plugins.txt
-   35  podman build -t jenkins:jcasc .
-   36  podman run--name jenkins --rm -p 8080:8080 jenkins:jcasc
-   37  podman run --name jenkins --rm -p 8080:8080 jenkins:jcasc
-   38  history > steps.txt
+podman login docker.io
+podman build -t docker.io/msabry/jenkins:v1 .
+podman push docker.io/msabry/jenkins:v1
 podman run --name jenkins --rm --network=host -p 8080:8080 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=admin --env GITHUB_SSH_KEY="$(cat ~/jenkins.key)" jenkins:jcasc

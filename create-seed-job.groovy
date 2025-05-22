@@ -36,7 +36,7 @@ def configXml = '''\
     <concurrentBuild>false</concurrentBuild>
     <builders>
       <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.48">
-        <targets>seed.groovy</targets>
+        <targets>seed2.groovy</targets>
         <usingScriptText>false</usingScriptText>
         <ignoreExisting>false</ignoreExisting>
         <ignoreMissingFiles>false</ignoreMissingFiles>
